@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f70b336fbe2b4926ad1f8e850b696629
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - carSettings: {fileID: 11400000, guid: 7aa9e47a0b289fb448170bdeb5053a2b, type: 2}
+  - groundSettings: {fileID: 11400000, guid: 6440faa5ad7ed84439b73b86b38426f9, type: 2}
+  - carController: {instanceID: 0}
+  - groundController: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -5,7 +5,7 @@ namespace Klyukay.UnityLogic.Cars.Wheels
 {
     
     [RequireComponent(typeof(WheelJoint2D))]
-    internal sealed class WheelController : MonoBehaviour
+    public sealed class WheelController : MonoBehaviour
     {
 
         [SerializeField] private WheelSettingsContainer settingsContainer;

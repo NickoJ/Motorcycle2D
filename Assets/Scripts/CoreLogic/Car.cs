@@ -3,7 +3,7 @@
 namespace Klyukay.CoreLogic
 {
     
-    public sealed class Car
+    public sealed class Car : ICarLoseProcessor, ICarTrickProcessor
     {
     
         private bool isAlive;
@@ -29,6 +29,8 @@ namespace Klyukay.CoreLogic
 
         public float TotalDistance => totalDistance;
 
+        public event Action Wheelie;
+        
         internal event Action CarDestroyed;
 
         public void OnDistanceChange(float distance)
@@ -38,9 +40,6 @@ namespace Klyukay.CoreLogic
 
             totalDistance = Math.Max(distance, totalDistance);
         }
-        
-        public void OutOfBounds() => IsAlive = false;
-        public void Flip() => IsAlive = false;
 
         internal void Reset()
         {
@@ -48,6 +47,15 @@ namespace Klyukay.CoreLogic
             
             isAlive = true;
             totalDistance = 0f;
+        }
+
+        void ICarLoseProcessor.OutOfBounds() => IsAlive = false;
+
+        void ICarLoseProcessor.Flip() => IsAlive = false;
+
+        void ICarTrickProcessor.DidWheelie()
+        {
+            if (isAlive) Wheelie?.Invoke();
         }
         
     }

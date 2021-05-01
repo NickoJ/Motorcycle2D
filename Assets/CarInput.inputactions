@@ -25,34 +25,12 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "f1b73386-ab99-41fe-adb7-bdadf6c4d00f",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Accelerate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "b8a3dbdf-08db-4bee-90d9-0c3c5d667369",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Accelerate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "262a15b9-6ddd-4b5c-9089-62ee0eee7011",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "DeAccelerate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

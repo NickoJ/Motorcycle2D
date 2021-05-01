@@ -20,8 +20,8 @@ MonoBehaviour:
   deAcceleration:
     useMotor: 1
     motorData:
-      motorSpeed: -300
-      maxMotorTorque: 1000
+      motorSpeed: -500
+      maxMotorTorque: 200
   noMoving:
     useMotor: 0
     motorData:

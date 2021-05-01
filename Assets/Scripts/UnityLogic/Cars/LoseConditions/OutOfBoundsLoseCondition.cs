@@ -10,12 +10,12 @@ namespace Klyukay.UnityLogic.Cars.LoseConditions
 
         private Rigidbody2D body;
 
-        private Car car;
+        private ICarLoseProcessor processor;
         private ICarSettings settings;
         
-        public override void Init(Car car, ICarSettings settings)
+        public override void Init(ICarLoseProcessor processor, ICarSettings settings)
         {
-            this.car = car;
+            this.processor = processor;
             this.settings = settings;
 
             body = GetComponent<Rigidbody2D>();
@@ -25,7 +25,7 @@ namespace Klyukay.UnityLogic.Cars.LoseConditions
         {
             if (body.position.y >= settings.LostYPoint) return;
             
-            car.OutOfBounds();
+            processor.OutOfBounds();
         }
         
     }

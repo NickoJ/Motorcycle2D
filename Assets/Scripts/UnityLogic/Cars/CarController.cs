@@ -1,6 +1,7 @@
 using System;
 using Klyukay.CoreLogic;
 using Klyukay.UnityLogic.Cars.LoseConditions;
+using Klyukay.UnityLogic.Cars.TrickDetectors;
 using UnityEngine;
 
 namespace Klyukay.UnityLogic.Cars
@@ -11,6 +12,7 @@ namespace Klyukay.UnityLogic.Cars
     public sealed class CarController : MonoBehaviour, ICarController
     {
 
+        [SerializeField] private TrickDetector[] trickDetectors = default;
         [SerializeField] private LoseCondition[] loseConditions = default;
         
         private Rigidbody2D body;
@@ -35,6 +37,12 @@ namespace Klyukay.UnityLogic.Cars
             
             body = GetComponent<Rigidbody2D>();
 
+            for (int i = 0; i < trickDetectors.Length; ++i)
+            {
+                var detector = trickDetectors[i];
+                detector.Init(this.car);
+            }
+            
             for (int i = 0; i < loseConditions.Length; ++i)
             {
                 var condition = loseConditions[i];
@@ -61,6 +69,7 @@ namespace Klyukay.UnityLogic.Cars
 
         private void Reset()
         {
+            trickDetectors = GetComponentsInChildren<TrickDetector>(true);
             loseConditions = GetComponentsInChildren<LoseCondition>(true);
         }
 

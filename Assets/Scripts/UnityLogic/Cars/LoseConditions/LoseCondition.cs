@@ -7,7 +7,7 @@ namespace Klyukay.UnityLogic.Cars.LoseConditions
     public abstract class LoseCondition : MonoBehaviour
     {
 
-        public abstract void Init(Car car, ICarSettings settings);
+        public abstract void Init(ICarLoseProcessor processor, ICarSettings settings);
 
     }
     

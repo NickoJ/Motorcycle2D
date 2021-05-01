@@ -7,12 +7,15 @@ namespace Klyukay.UnityLogic.Cars
 {
     
     [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(CarInputController))]
     public sealed class CarController : MonoBehaviour, ICarController
     {
 
         [SerializeField] private LoseCondition[] loseConditions = default;
         
         private Rigidbody2D body;
+        private CarInputController input;
+        
         private ICarSettings settings;
         
         private Car car;
@@ -38,6 +41,9 @@ namespace Klyukay.UnityLogic.Cars
                 condition.Init(this.car, this.settings);
             }
             
+            input = GetComponent<CarInputController>();
+            input.Init();
+            
             isInitialized = true;
         }
 
@@ -49,7 +55,7 @@ namespace Klyukay.UnityLogic.Cars
 
         private void FixedUpdate()
         {
-            var distance = body.position.x - startPosition.x;
+            float distance = body.position.x - startPosition.x;
             car.OnDistanceChange(distance);
         }
 

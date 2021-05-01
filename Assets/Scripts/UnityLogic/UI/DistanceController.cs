@@ -1,5 +1,4 @@
-﻿using System;
-using Klyukay.CoreLogic;
+﻿using Klyukay.CoreLogic;
 using TMPro;
 using UnityEngine;
 

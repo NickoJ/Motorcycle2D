@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1212078685980371303}
   - component: {fileID: 6438988052627860317}
+  - component: {fileID: 3496086696277074262}
   - component: {fileID: 1748207376792591073}
   - component: {fileID: 1212078685980371301}
   - component: {fileID: 1212078685980371302}
@@ -53,6 +54,19 @@ MonoBehaviour:
   loseConditions:
   - {fileID: 1748207376792591073}
   - {fileID: 7862405210310835551}
+--- !u!114 &3496086696277074262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212078685980371224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915ab053f14026249a684e031c876c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelController: {fileID: 7611914343831114828}
 --- !u!114 &1748207376792591073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1212078686308914007}
+  - component: {fileID: 7611914343831114828}
   - component: {fileID: 1212078686308914006}
   - component: {fileID: 1212078686308914003}
   - component: {fileID: 1212078686308914004}
@@ -146,6 +161,19 @@ Transform:
   m_Father: {fileID: 1212078685980371303}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7611914343831114828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212078686308913992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f5d66f6929c4ca38a0dcfe89e91729b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsContainer: {fileID: 11400000, guid: 491587fb66ff532419ef4fece1b722c0, type: 2}
 --- !u!212 &1212078686308914006
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -254,7 +282,7 @@ WheelJoint2D:
     m_DampingRatio: 0.1
     m_Frequency: 9
     m_Angle: 90
-  m_UseMotor: 1
+  m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 1000
     m_MaximumMotorForce: 1000

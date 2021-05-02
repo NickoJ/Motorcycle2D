@@ -1,4 +1,5 @@
-﻿using Klyukay.CoreLogic;
+﻿using System.Runtime.CompilerServices;
+using Klyukay.CoreLogic;
 using Klyukay.UnityLogic.Common.Physics2D;
 using UnityEngine;
 
@@ -33,14 +34,23 @@ namespace Klyukay.UnityLogic.Cars.TrickDetectors
 
         private void HandleCollisionEnter()
         {
-            var endAngle = Mathf.Round(body.rotation / 360f) * 360f;
+            var endAngle = CalculateAngle(body.rotation);
             if (!Mathf.Approximately(endAngle, startAngle)) OnTrickDetected();
         }
 
         private void HandleCollisionExit()
         {
-            startAngle = Mathf.Round(body.rotation / 360f) * 360f;
+            startAngle = CalculateAngle(body.rotation);
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private float CalculateAngle(in float rotation)
+        {
+            const float fullCircle = 360f;
+
+            return Mathf.Round(rotation / fullCircle) * fullCircle;
+        }
+        
     }
     
 }
